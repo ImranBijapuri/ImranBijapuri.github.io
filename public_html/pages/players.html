@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="MyModule">
+    <head>
+
+        <link href="../css/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body ng-controller="myController3">
+        <div id="wrapper">
+            <h1>Players</h1>
+
+            <table id="keywords" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th><span>Name</span></th>
+                        <th><span>position</span></th>
+                        <th><span>jerseyNumber</span></th>
+                        <th><span>dateOfBirth</span></th>
+                        <th><span>nationality</span></th>
+                        <th><span>marketValue</span></th>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="player in players">
+
+                        <td>{{ player.name}}</td>
+                        <td>{{ player.position}}</td>
+                        <td>{{ player.jerseyNumber}}</td>
+                        <td>{{ player.dateOfBirth}}</td>
+                        <td>{{ player.nationality}}</td>
+                        <td>{{ player.marketValue}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+
+    </body>
+</html>
