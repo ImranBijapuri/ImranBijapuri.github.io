@@ -1,0 +1,38 @@
+<html ng-app="MyModule">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+        <link href="../css/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body >
+        <div id="wrapper">
+            <h1>Leagues</h1>
+
+            <table id="keywords" cellspacing="0" cellpadding="0" ng-controller="myController1">
+                <thead>
+                    <tr>
+                        <th><span>Name</span></th>
+                        <th><span>Number of Games</span></th>
+                        <th><span>Number of Teams</span></th>
+                        <th><span>League</span></th>
+                        <th><span>Current Match Day</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="league in leagues">
+                        <td><a href="#teams/{{ league.id }}">{{ league.caption}}</a></td>
+                        <td>{{ league.numberOfGames}}</td>
+                        <td>{{ league.numberOfTeams}}</td>
+                        <td>{{ league.league}}</td>
+                        <td>{{ league.currentMatchday}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            
+            
+            
+            
+        </div>
+    </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="MyModule">
+    <head>
+
+        <link href="../css/style.css" rel="stylesheet" type="text/css"/>
+    </head>
+    <body ng-controller="myController2">
+        <div id="wrapper">
+            <h1>Teams</h1>
+
+            <table id="keywords" cellspacing="0" cellpadding="0">
+                <thead>
+                    <tr>
+                        <th><span>Name</span></th>
+                        <th><span>squadMarketValue</span></th>
+                        <th><span>Crest</span></th>
+                        <th><span>Players</span></th>
+                        <th><span>Fixtures</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="team in teams">
+                <input  id = "hidurl" type = "hidden" ng-value="'{{ team._links.self.href }}'">
+                
+                <td>{{ team.name}}</td>
+                <td>{{ team.squadMarketValue}}</td>
+                <td><img width="20px" height="20px" ng-src="{{ team.crestUrl}}"/></td>
+                <td><a href="#players/{{ team._links.self.href.substring(team._links.self.href.lastIndexOf('/') + 1) }}">Players</a></td>
+                <td><a href="#fixtures/{{ team._links.self.href.substring(team._links.self.href.lastIndexOf('/') + 1) }}">Fixtures</a></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        
+    </body>
+</html>
